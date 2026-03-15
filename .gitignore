@@ -10,3 +10,4 @@ dist
 
 .vite
 .idea
+.claude/settings.local.json

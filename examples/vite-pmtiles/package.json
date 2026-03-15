@@ -1,0 +1,23 @@
+{
+  "name": "example-vite-pmtiles",
+  "private": true,
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "vite ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@mapbox/martini": "git+https://github.com/davenquinn/martini.git",
+    "ndarray": "^1.0.19",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-cesium": "^1.2.23"
+  },
+  "packageManager": "yarn@3.6.3",
+  "dependencies": {
+    "cesium": "^1.137.0",
+    "pmtiles": "^4.3.0"
+  }
+}

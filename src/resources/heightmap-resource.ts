@@ -55,7 +55,7 @@ export class DefaultHeightmapResource implements HeightmapResource {
       const canvas = document.createElement("canvas");
       canvas.width = this.tileSize;
       canvas.height = this.tileSize;
-      const context = canvas.getContext("2d");
+      const context = canvas.getContext("2d", { willReadFrequently: true });
       ctx = {
         canvas,
         context,

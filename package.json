@@ -19,6 +19,7 @@
     "example:webpack-react": "yarn workspace example-webpack-react run dev",
     "example:webpack": "yarn workspace example-webpack run dev",
     "example:webpack-mapzen": "yarn workspace example-webpack-mapzen-worker run dev",
+    "example:pmtiles": "yarn workspace example-vite-pmtiles run dev",
     "dev": "yarn run watch & yarn run example",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublishOnly": "npm run build",
@@ -36,7 +37,8 @@
     "@types/ndarray": "^1.0.11",
     "cesium": "^1.137.0",
     "get-pixels": "^3.3.3",
-    "ndarray": "^1.0.19"
+    "ndarray": "^1.0.19",
+    "pmtiles": "^4.3.0"
   },
   "workspaces": [
     "examples/*"

@@ -1485,6 +1485,7 @@ __metadata:
     cesium: "npm:^1.137.0"
     get-pixels: "npm:^3.3.3"
     ndarray: "npm:^1.0.19"
+    pmtiles: "npm:^4.3.0"
     prettier: "npm:^3.5.0"
     rollup: "npm:^2.39.0"
     rollup-plugin-web-worker-loader: "npm:^1.5.0"
@@ -3875,6 +3876,20 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"example-vite-pmtiles@workspace:examples/vite-pmtiles":
+  version: 0.0.0-use.local
+  resolution: "example-vite-pmtiles@workspace:examples/vite-pmtiles"
+  dependencies:
+    "@mapbox/martini": "git+https://github.com/davenquinn/martini.git"
+    cesium: "npm:^1.137.0"
+    ndarray: "npm:^1.0.19"
+    pmtiles: "npm:^4.3.0"
+    typescript: "npm:^5.9.3"
+    vite: "npm:^7.3.1"
+    vite-plugin-cesium: "npm:^1.2.23"
+  languageName: unknown
+  linkType: soft
+
 "example-vite@workspace:examples/vite":
   version: 0.0.0-use.local
   resolution: "example-vite@workspace:examples/vite"
@@ -4078,6 +4093,13 @@ __metadata:
     picomatch:
       optional: true
   checksum: 10c0/e345083c4306b3aed6cb8ec551e26c36bab5c511e99ea4576a16750ddc8d3240e63826cc624f5ae17ad4dc82e68a253213b60d556c11bfad064b7607847ed07f
+  languageName: node
+  linkType: hard
+
+"fflate@npm:^0.8.2":
+  version: 0.8.2
+  resolution: "fflate@npm:0.8.2"
+  checksum: 10c0/03448d630c0a583abea594835a9fdb2aaf7d67787055a761515bf4ed862913cfd693b4c4ffd5c3f3b355a70cf1e19033e9ae5aedcca103188aaff91b8bd6e293
   languageName: node
   linkType: hard
 
@@ -6034,6 +6056,15 @@ __metadata:
   dependencies:
     find-up: "npm:^4.0.0"
   checksum: 10c0/c56bda7769e04907a88423feb320babaed0711af8c436ce3e56763ab1021ba107c7b0cafb11cde7529f669cfc22bffcaebffb573645cbd63842ea9fb17cd7728
+  languageName: node
+  linkType: hard
+
+"pmtiles@npm:^4.3.0":
+  version: 4.4.0
+  resolution: "pmtiles@npm:4.4.0"
+  dependencies:
+    fflate: "npm:^0.8.2"
+  checksum: 10c0/e282b0c8f9b88787c24031cd44c114310bc74b7ce72e0c9ea32bad96c7ae1a9354a3e4c33d6192dbaa89060158298b965abf7b33b1c2d746319496b43d565b4b
   languageName: node
   linkType: hard
 

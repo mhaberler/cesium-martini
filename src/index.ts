@@ -1,6 +1,7 @@
 import "./module.d.ts";
 import DefaultHeightmapResource from "./resources/heightmap-resource";
 import MapboxTerrainResource from "./resources/mapbox-resource";
+import PMTilesHeightmapResource from "./resources/pmtiles-resource";
 import {
   MartiniTerrainProvider,
   StretchedTilingScheme,
@@ -15,5 +16,6 @@ export {
   MartiniTerrainProvider,
   DefaultHeightmapResource,
   MapboxTerrainResource,
+  PMTilesHeightmapResource,
   StretchedTilingScheme,
 };

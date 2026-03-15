@@ -59,8 +59,9 @@ To run an example application, add `MAPBOX_API_TOKEN=<your-mapbox-token>` to a
 `.env` file. in the root of this repository, and then start the appropriate
 example:
 
-- `yarn run example` (Vite)
-- `yarn run example:mapzen` (Vite + Mapzen)
+- `yarn run example` (Vite + Mapbox Terrain-RGB)
+- `yarn run example:mapzen` (Vite + Mapzen Terrarium)
+- `yarn run example:pmtiles` (Vite + Mapterhorn PMTiles)
 - `yarn run example:webpack` (Webpack)
 - `yarn run example:webpack-mapzen` (Webpack + Mapzen)
 - `yarn run example:webpack-react` (Webpack + React)
@@ -130,6 +131,43 @@ function skipZoomLevels(z) {
 
 The configuration also takes a single number and array.
 
+### PMTiles support (added in version `1.7.0`)
+
+[PMTiles](https://github.com/protomaps/PMTiles) is a single-file archive format
+for map tiles that uses HTTP range requests instead of per-tile fetches. This
+module supports PMTiles archives as an elevation data source via the
+`PMTilesHeightmapResource` class.
+
+[Mapterhorn](https://mapterhorn.com/data-access/) provides free,
+unauthenticated global elevation data as Terrarium-encoded PMTiles archives
+(512px WebP tiles, up to zoom 17).
+
+```js
+import {
+  MartiniTerrainProvider,
+  PMTilesHeightmapResource,
+  WorkerFarmTerrainDecoder,
+} from "@macrostrat/cesium-martini";
+
+const terrainResource = new PMTilesHeightmapResource({
+  url: "https://download.mapterhorn.com/planet.pmtiles",
+  tileSize: 512,
+  maxZoom: 12,
+});
+
+const terrainDecoder = new WorkerFarmTerrainDecoder({
+  worker: terrariumWorker, // Web worker using Terrarium decode formula
+});
+
+const terrainProvider = new MartiniTerrainProvider({
+  resource: terrainResource,
+  decoder: terrainDecoder,
+});
+```
+
+See the [`examples/vite-pmtiles/`](examples/vite-pmtiles/) directory for a
+complete working example.
+
 ### Outstanding bugs and issues
 
 - [x] High-resolution `@2x` tiles are notionally supported but not well-tested.
@@ -147,8 +185,17 @@ The configuration also takes a single number and array.
 - [Quantized mesh viewer](https://github.com/heremaps/quantized-mesh-viewer)
 - [Cesium globe materials example](https://sandcastle.cesium.com/?src=Globe%20Materials.html)
 - [Cesium sky/atmosphere example](https://sandcastle.cesium.com/?src=Sky%20Atmosphere.html)
+- [PMTiles](https://github.com/protomaps/PMTiles)
+- [Mapterhorn elevation data](https://mapterhorn.com/data-access/)
 
 ## Changelog
+
+### `[1.7.0]`: March 2026
+
+- Add `PMTilesHeightmapResource` for loading elevation data from PMTiles archives
+- Add Vite example using [Mapterhorn](https://mapterhorn.com/data-access/) global elevation PMTiles
+- Fix `willReadFrequently` canvas warning in `DefaultHeightmapResource` and `PMTilesHeightmapResource`
+- Allow `buildExample` to accept custom camera location
 
 ### `[1.6.0]`: January 2026
 
