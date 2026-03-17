@@ -9,14 +9,21 @@ interface CameraLocation {
   pitch?: number;
 }
 
-export function buildExample(terrainProvider: any, accessToken?: string, camera?: CameraLocation) {
-  const imageryProvider = accessToken
-    ? new Cesium.MapboxImageryProvider({
-        mapId: "mapbox.satellite",
-        maximumLevel: 19,
-        accessToken,
-      })
-    : new Cesium.OpenStreetMapImageryProvider();
+export function buildExample(
+  terrainProvider: any,
+  accessToken?: string,
+  camera?: CameraLocation,
+  customImageryProvider?: any,
+) {
+  const imageryProvider = customImageryProvider
+    ? customImageryProvider
+    : accessToken
+      ? new Cesium.MapboxImageryProvider({
+          mapId: "mapbox.satellite",
+          maximumLevel: 19,
+          accessToken,
+        })
+      : new Cesium.OpenStreetMapImageryProvider();
 
   const opts = {
     terrainProvider,
