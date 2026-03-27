@@ -1,6 +1,6 @@
 {
   "name": "@mhaberler/cesium-martini",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "On-the-fly meshing of raster elevation tiles for the CesiumJS virtual globe",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -22,7 +22,7 @@
     "example:pmtiles": "yarn workspace example-vite-pmtiles run dev",
     "dev": "yarn run watch & yarn run example",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "yarn run build",
     "format": "prettier --write src/**/*.ts examples/**/*.ts",
     "check": "tsc --noEmit"
   },
