@@ -1,3 +1,4 @@
+import * as Cesium from "cesium";
 import {
   MartiniTerrainProvider,
   PMTilesHeightmapResource,
@@ -30,8 +31,20 @@ const terrainProvider = new MartiniTerrainProvider({
   decoder: terrainDecoder,
 });
 
-buildExample(terrainProvider, import.meta.env.MAPBOX_API_TOKEN, {
-  lat: 47.13,
-  lon: 15.33,
-  height: 8000,
+// VersaTiles: free, unauthenticated satellite imagery (Copernicus Sentinel-2)
+const imageryProvider = new Cesium.UrlTemplateImageryProvider({
+  url: "https://tiles.versatiles.org/tiles/satellite/{z}/{x}/{y}",
+  maximumLevel: 12,
+  credit: new Cesium.Credit("© Copernicus Sentinel-2 via VersaTiles", true),
 });
+
+buildExample(
+  terrainProvider,
+  undefined,
+  {
+    lat: 47.13,
+    lon: 15.33,
+    height: 8000,
+  },
+  imageryProvider,
+);

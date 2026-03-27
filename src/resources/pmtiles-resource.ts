@@ -55,9 +55,7 @@ export class PMTilesHeightmapResource implements HeightmapResource {
     return ctx;
   }
 
-  async getTilePixels(
-    coords: TileCoordinates,
-  ): Promise<ImageData> | undefined {
+  async getTilePixels(coords: TileCoordinates): Promise<ImageData> | undefined {
     const { z, x, y } = coords;
     const response = await this.pmtiles.getZxy(z, x, y);
     if (!response || !response.data) return undefined;
