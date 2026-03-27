@@ -24,11 +24,11 @@ geoscience visualizations.
 
 ## Installation
 
-This package is listed on NPM as `@macrostrat/cesium-martini`. It can be
+This package is listed on NPM as `@mhaberler/cesium-martini`. It can be
 installed using the command
 
 ```
-npm install --save @macrostrat/cesium-martini
+npm install --save @mhaberler/cesium-martini
 ```
 
 ![Cesium-Martini](/img/cesium-martini.png)
@@ -147,7 +147,7 @@ import {
   MartiniTerrainProvider,
   PMTilesHeightmapResource,
   WorkerFarmTerrainDecoder,
-} from "@macrostrat/cesium-martini";
+} from "@mhaberler/cesium-martini";
 
 const terrainResource = new PMTilesHeightmapResource({
   url: "https://download.mapterhorn.com/planet.pmtiles",

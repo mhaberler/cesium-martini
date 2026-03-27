@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "@macrostrat/cesium-martini",
+      "name": "@mhaberler/cesium-martini",
       "dependencies": {
         "@mapbox/martini": "git+https://github.com/davenquinn/martini.git",
         "@types/ndarray": "^1.0.11",
