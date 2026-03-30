@@ -16,6 +16,9 @@ const terrainResource = new PMTilesHeightmapResource({
   url: "https://download.mapterhorn.com/planet.pmtiles",
   tileSize: 512,
   maxZoom: 12,
+  skipZoomLevels(z: number) {
+    return z % 3 != 0
+  },
 });
 
 // Terrarium format uses a different encoding scheme to Mapbox Terrain-RGB
